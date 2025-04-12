@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOMOS TV</title>
+  <link rel="stylesheet" href="style.css">
+<style type="text/css" id="dcoder_stylesheet">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+}
+
+.gradient-border {
+  display: inline-block;
+  padding: 10px 40px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #ff0000, #ff6600, #ff0000);
+  background-size: 200% auto;
+  animation: gradientMove 4s linear infinite;
+}
+
+header h1 {
+  font-size: 50px;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 15px 10px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav button,
+.whatsapp-btn {
+  font-size: 15px;
+  padding: 8px 16px;
+  border: none;
+  background: linear-gradient(45deg, #ff4d4d, #cc0000);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+nav button:hover,
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #cc0000, #990000);
+}
+
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section {
+  display: none;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.section.active {
+  display: block;
+}
+
+h2 {
+  font-size: 36px;
+  color: #ff4444;
+  margin-bottom: 25px;
+}
+
+p {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.8;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.video-grid iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  border: 5px solid #cc0000;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.video-grid iframe:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  padding: 30px;
+  background-color: #111;
+  text-align: center;
+  color: #ccc;
+  font-size: 18px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}</style></head>
+<body>
+
+<audio id="bg-music" autoplay loop>
+  <source src="https://drive.google.com/uc?export=download&amp;id=1-GRVJZcuLTreuzfYVS1sXQfFPyf2ARHW" type="audio/mp3">
+</audio>
+
+<header>
+  <div class="gradient-border">
+    <h1>HOMOS TV</h1>
+  </div>
+</header>
+
+<nav>
+  <div class="button-group">
+    <button onclick="showSection('home')">الرئيسية</button>
+    <button onclick="showSection('movies')">أفلام</button>
+    <button onclick="showSection('about')">من نحن</button>
+    <a href="https://wa.me/201016553764" target="_blank" class="whatsapp-btn">تواصل معنا</a>
+  </div>
+</nav>
+
+<main>
+  <section id="home" class="section active">
+    <h2>HOMOS TVمرحبا بك في</h2>
+    <p>استمتع بأحدث الفيديوهات الترفيهية والمحتوى المميز.</p>
+  </section>
+
+  <section id="movies" class="section">
+    <h2>أفلام حديثة</h2>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/0bucjzQpOGs" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/dl10DqqA5XY" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>من نحن</h2>
+    <p>قناة HOMOS TV تقدم محتوى ترفيهي مميز ومتنوع لكل الفئات.</p>
+  </section>
+</main>
+
+<footer>
+  <p> ®HOMOS TV جميع الحقوق محفوظة لـ </p>
+</footer>
+
+<script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">function showSection(id) {
+  document.querySelectorAll('.section').forEach(section => {
+    section.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+
+  const bgMusic = document.getElementById("bg-music");
+
+  if (id === "movies") {
+    bgMusic.pause();
+  } else {
+    bgMusic.play();
+  }
+}</script></body></html>
